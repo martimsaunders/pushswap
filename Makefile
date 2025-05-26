@@ -6,12 +6,12 @@
 #    By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 16:39:26 by mprazere          #+#    #+#              #
-#    Updated: 2025/05/23 18:11:46 by mprazere         ###   ########.fr        #
+#    Updated: 2025/05/26 15:05:07 by mprazere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libpushswap.a
-SRCS = push_lists.c push_prot.c push_split.c push_swap.c push_utils.c push_ftstack_a.c push_ftstack_both.c push_ftstack_b.c
+SRCS = push_lists.c push_prot.c push_split.c push_swap.c push_utils.c push_ftstack_ab.c push_ftstack_both.c push_sort2a5.c
 OBJS = $(SRCS:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror -g

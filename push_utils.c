@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:09:38 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/23 16:46:05 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/26 14:11:26 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,7 @@ t_list	*ft_lstnew(int content)
 	node->number = content;
 	node->next = NULL;
 	node->previous = NULL;
+	node->normalized = 0;
 	node->index = 1;
 	return (node);
 }
@@ -82,4 +83,20 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	last->next = new;
 	new->previous = last;
 	new->index = last->index + 1;
+}
+
+void update_indexes(t_list **stack)
+{
+	t_list *current;
+	int index;
+
+	if (!stack || !(*stack))
+		return ;
+	current = *stack;
+	index = 1;
+	while (current)
+	{
+		current->index = index++;
+		current = current->next;
+	}
 }
