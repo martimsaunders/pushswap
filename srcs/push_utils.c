@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:09:38 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/26 14:11:26 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:32:47 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,10 +85,10 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	new->index = last->index + 1;
 }
 
-void update_indexes(t_list **stack)
+void	update_indexes(t_list **stack)
 {
-	t_list *current;
-	int index;
+	t_list	*current;
+	int		index;
 
 	if (!stack || !(*stack))
 		return ;

@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 16:18:10 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/26 11:36:48 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:33:02 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 void	swap_both(t_list **a, t_list **b)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = swap_ab(a, 0);
 	j = swap_ab(b, 0);
@@ -29,8 +29,8 @@ void	swap_both(t_list **a, t_list **b)
 
 void	rotate_both(t_list **a, t_list **b)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = rotate_ab(a, 0);
 	j = rotate_ab(b, 0);
@@ -44,8 +44,8 @@ void	rotate_both(t_list **a, t_list **b)
 
 void	reverse_rotate_both(t_list **a, t_list **b)
 {
-	int i;
-	int j;
+	int	i;
+	int	j;
 
 	i = reverse_rotate_ab(a, 0);
 	j = reverse_rotate_ab(b, 0);

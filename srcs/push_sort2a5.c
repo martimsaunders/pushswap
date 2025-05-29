@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/26 15:01:07 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/26 16:37:50 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:32:55 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,13 +57,13 @@ static int	find_position(t_list *stack, int norm_value)
 	return (pos);
 }
 
-void	sort_fortofive(t_list **stack_a, t_list **stack_b, int size,
+void	sort_fourtofive(t_list **stack_a, t_list **stack_b, int size,
 		int lst_size)
 {
 	int	pos;
 	int	to_push;
 	int	i;
-	int rotations;
+	int	rotations;
 
 	i = 0;
 	to_push = size - 3;

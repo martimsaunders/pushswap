@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:58:48 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/23 16:21:38 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:33:00 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,20 +54,23 @@ static int	process_number(t_list **stack_a, char *str)
 	return (0);
 }
 
-int	create_stack(t_list **stack_a, char **argv, int argc)
+int	create_stack(t_list **stack_a, char **argv, int argc, int i)
 {
-	int		i;
 	int		j;
 	char	**split_args;
 
-	i = 0;
 	while (++i < argc)
 	{
+		if (!argv[i] || argv[i][0] == '\0')
+			continue ;
 		if (ft_strchr(argv[i], ' '))
 		{
 			split_args = ft_split(argv[i], ' ');
-			if (!split_args)
-				return (1);
+			if (split_args[0] == NULL)
+			{
+				free_split_args(split_args);
+				continue ;
+			}
 			j = 0;
 			while (split_args[j])
 				if (process_number(stack_a, split_args[j++]))
@@ -76,8 +79,6 @@ int	create_stack(t_list **stack_a, char **argv, int argc)
 		}
 		else if (process_number(stack_a, argv[i]))
 			return (1);
-		if (check_dbls(stack_a))
-			return (1);
 	}
-	return (0);
+	return (check_dbls(stack_a));
 }

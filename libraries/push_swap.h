@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:01:11 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/26 16:30:16 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/28 12:23:03 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,8 @@ void				ft_lstadd_back(t_list **lst, t_list *new);
 t_list				*ft_lstnew(int content);
 void				ft_lstadd_back(t_list **lst, t_list *new);
 void				free_stack(t_list **stack);
-int					create_stack(t_list **stack_a, char **argv, int argc);
+int					create_stack(t_list **stack_a, char **argv, int argc,
+						int i);
 int					check_dbls(t_list **stack);
 int					swap_ab(t_list **stack_a, int type);
 void				swap_both(t_list **a, t_list **b);
@@ -47,9 +48,11 @@ int					reverse_rotate_ab(t_list **stack, int type);
 void				reverse_rotate_both(t_list **a, t_list **b);
 void				sort_two(t_list **stack);
 void				sort_three(t_list **stack);
-void				sort_fortofive(t_list **stack_a, t_list **stack_b, int size,
-						int lst_size);
+void				sort_fourtofive(t_list **stack_a, t_list **stack_b,
+						int size, int lst_size);
 void				ordenate_lst(t_list **a, t_list **b);
 int					is_sorted(t_list *stack);
+int					count_lst(t_list *stack);
+void				radix_sort(t_list **a, t_list **b);
 
 #endif

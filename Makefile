@@ -6,18 +6,27 @@
 #    By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/04/25 16:39:26 by mprazere          #+#    #+#              #
-#    Updated: 2025/05/26 15:05:07 by mprazere         ###   ########.fr        #
+#    Updated: 2025/05/29 11:35:27 by mprazere         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libpushswap.a
-SRCS = push_lists.c push_prot.c push_split.c push_swap.c push_utils.c push_ftstack_ab.c push_ftstack_both.c push_sort2a5.c
+SRCS = srcs/push_lists.c \
+srcs/push_prot.c \
+srcs/push_split.c \
+srcs/push_swap.c \
+srcs/push_utils.c \
+srcs/push_ftstack_ab.c \
+srcs/push_ftstack_both.c \
+srcs/push_sort2a5.c \
+srcs/push_radix.c \
+
 OBJS = $(SRCS:.c=.o)
 CC = cc
-CFLAGS = -Wall -Wextra -Werror -g
-EXEC = pushswap
+CFLAGS = -Wall -Wextra -Werror -g -I libraries
+EXEC = push_swap
 
-all: $(NAME)
+all: $(EXEC)
 
 $(NAME): $(OBJS)
 	@ar rcs $(NAME) $(OBJS)
@@ -25,9 +34,7 @@ $(NAME): $(OBJS)
 	@echo 'Funções Compiladas!'
 
 $(EXEC): $(NAME)
-	$(CC) $(CFLAGS) main.c -o $(EXEC) -L. -lpushswap
-
-test: $(EXEC)
+	@$(CC) $(CFLAGS) srcs/main.c -o $(EXEC) -L. -lpushswap
 	@echo 'Executável $(EXEC) criado e pronto para uso!'
 
 clean:
@@ -41,4 +48,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: all clean fclean re test
+.PHONY: all clean fclean re

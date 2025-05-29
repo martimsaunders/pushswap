@@ -6,7 +6,7 @@
 /*   By: mprazere <mprazere@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/23 11:48:25 by mprazere          #+#    #+#             */
-/*   Updated: 2025/05/23 16:12:29 by mprazere         ###   ########.fr       */
+/*   Updated: 2025/05/29 11:32:58 by mprazere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static int	check_string(char *s1)
 
 	i = 0;
 	if (!*s1)
-		return (1);
+		return (0);
 	while (s1[i])
 	{
 		while (s1[i] == ' ')
@@ -69,7 +69,7 @@ int	check_dbls(t_list **stack)
 		while (compare)
 		{
 			if (compare->number == current->number)
-				return (write(1, "DOUBLE NUMBERS ", 15), 1);
+				return (1);
 			compare = compare->next;
 		}
 		current = current->next;
